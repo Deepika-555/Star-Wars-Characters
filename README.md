@@ -84,22 +84,39 @@ npm run preview
   - Smooth scroll navigation to page sections
   - Mobile-responsive hamburger menu
   - Functional login dialog with form validation
-- **⭐ Animated Loading States**: Custom star-themed loading animations
+  - Slide-down entrance animation with glow effects
+  - Interactive hover animations on logo and buttons
+- **⭐ Animated Loading States**: Custom star-themed loading animations with pulse and trail effects
 - **🌌 Immersive Background**: Radial gradients and starfield pattern matching the Star Wars aesthetic
-- **🎭 Smooth Animations**: Hover effects, transitions, and micro-interactions throughout
+- **🎭 Comprehensive Animation System**: 
+  - **Staggered Entrance Animations**: Character cards fade in sequentially with 50ms delays
+  - **Smooth Transitions**: All interactions use consistent 300-700ms timing
+  - **Hover Effects**: Scale, lift, glow, and shadow enhancements on interactive elements
+  - **Modal Animations**: Scale-in entrance with staggered content reveals
+  - **Hero Section**: Sequential fade-in animations for badge, title, description, and search
+  - **Micro-interactions**: Button press feedback, icon rotations, and indicator animations
+  - **Glow Effects**: Pulsing Star Wars-themed yellow/gold glows throughout
 - **♿ Accessibility**: Semantic HTML, keyboard navigation, and screen reader support
 
 ### Bonus Features
 
 - **🔐 Login Dialog**: Functional login form with toast notifications (UI-only, ready for backend integration)
 - **🎯 Smooth Scroll Navigation**: Anchor links to different page sections
-- **💫 Custom Animations**: Star pulse and trail animations for loading states
+- **💫 Comprehensive Animation System**: 
+  - 15+ custom keyframe animations
+  - Staggered entrance animations for visual flow
+  - Interactive hover effects on all elements
+  - Star-themed pulse and trail animations
+  - Glow effects matching Star Wars aesthetic
+  - Smooth modal transitions with scale-in
+  - Micro-interactions for enhanced feedback
 - **🎨 Glassmorphism Design**: Modern frosted glass effects on navbar and modals
 - **📊 Error Handling**: User-friendly error messages with retry capabilities
 - **⚡ Performance Optimized**: 
   - React Query for efficient data fetching and caching
   - Client-side filtering for instant results
   - Optimized re-renders with React best practices
+  - GPU-accelerated CSS animations
 
 ## 🛠️ Technology Stack
 
@@ -171,12 +188,79 @@ The application follows a **dark space theme** inspired by the Star Wars univers
   - Matches common card-based layouts
 - **Trade-off**: More pages to navigate, but better visual organization
 
+#### 8. **Comprehensive Animation System**
+- **Choice**: Extensive use of CSS animations and transitions throughout the application
+- **Rationale**: 
+  - Enhances user experience with smooth, polished interactions
+  - Creates visual hierarchy and guides user attention
+  - Maintains Star Wars theme consistency with glow and pulse effects
+  - Provides feedback for all user interactions
+- **Implementation**:
+  - **Keyframe Animations**: 15+ custom animations (fade-in, slide-up, scale-in, glow-pulse, float, etc.)
+  - **Staggered Delays**: Sequential animations create visual flow (100ms-600ms delays)
+  - **GPU Acceleration**: Uses `transform` and `opacity` for optimal performance
+  - **Consistent Timing**: Standardized durations (300ms-700ms) for cohesive feel
+  - **Hover States**: Interactive feedback on all clickable elements
+- **Trade-off**: 
+  - More CSS code, but significantly improves perceived quality
+  - Slight performance consideration on very old devices (mitigated with hardware acceleration)
+  - **Future enhancement**: Could add `prefers-reduced-motion` support for accessibility
+
+### Animation Features
+
+The application includes a comprehensive animation system with the following capabilities:
+
+#### Animation Types
+- **Fade Animations**: `fade-in`, `fade-in-up`, `fade-in-down`, `fade-in-left`, `fade-in-right`
+- **Scale Animations**: `scale-in` for modal entrances
+- **Slide Animations**: `slide-up`, `slide-down` for content reveals
+- **Glow Effects**: `glow-pulse`, `glow-slow` for Star Wars-themed highlights
+- **Special Effects**: `float`, `rotate-slow`, `bounce-in`, `shake`
+- **Star Animations**: `star-pulse`, `star-trail` for loading states
+
+#### Component-Specific Animations
+- **Character Cards**: 
+  - Staggered fade-in-up entrance (50ms delay per card)
+  - Hover: scale to 1.05, lift with shadow, border glow
+  - Badge rotation and scale on hover
+  - Indicator dot glow and rotation
+- **Character Modal**: 
+  - Scale-in entrance animation
+  - Left column fades in from left, right from right
+  - Image zoom on hover (scale 1.1)
+  - Floating icons with subtle animation
+  - Title with slow glow effect
+- **Navbar**: 
+  - Slide-down entrance
+  - Logo rocket rotates and glows on hover
+  - Button scale and lift effects
+  - Navigation links fade in
+- **Hero Section**: 
+  - Sequential animations: badge → title → description → search
+  - Glow effects on badge and title
+  - Input border enhancement on hover
+  - Filter section hover effects
+- **Buttons**: 
+  - Hover: translate up, scale, enhanced shadow
+  - Active: scale down for press feedback
+  - Icon animations (translate, rotate)
+
+#### Performance Optimizations
+- All animations use CSS `transform` and `opacity` (GPU-accelerated)
+- No layout-triggering properties (avoid `width`, `height`, `top`, `left`)
+- Hardware acceleration via `will-change` where appropriate
+- Smooth 60fps animations on modern devices
+
 ### Performance Considerations
 
 - **React Query Caching**: Characters are cached after first fetch, reducing API calls
 - **Lazy Loading**: Modal content loads only when opened
 - **Optimized Re-renders**: Proper use of React hooks and memoization
 - **CSS Animations**: Hardware-accelerated transforms for smooth performance
+  - All animations use `transform` and `opacity` (GPU-accelerated)
+  - No layout-triggering properties to avoid reflows
+  - Consistent timing functions for predictable performance
+  - Staggered animations prevent simultaneous heavy operations
 
 ### Accessibility Features
 
