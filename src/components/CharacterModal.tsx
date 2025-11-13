@@ -35,21 +35,21 @@ export const CharacterModal = ({ character, isOpen, onClose }: CharacterModalPro
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-card border-2 border-primary/20">
-        <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-primary">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-card border-2 border-primary/20 animate-scale-in">
+        <DialogHeader className="animate-fade-in-down">
+          <DialogTitle className="text-3xl font-bold text-primary animate-glow-slow">
             {character.name}
           </DialogTitle>
         </DialogHeader>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Left Column - Image */}
-          <div className="space-y-4">
-            <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+          <div className="space-y-4 animate-fade-in-left">
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden group">
               <img
                 src={imageUrl}
                 alt={character.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               {/* Species badge */}
               <div className="absolute top-3 left-3 bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
@@ -59,11 +59,11 @@ export const CharacterModal = ({ character, isOpen, onClose }: CharacterModalPro
           </div>
 
           {/* Right Column - Information */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fade-in-right">
             {/* Basic Information */}
-            <div>
+            <div className="animate-slide-up animation-delay-200">
               <div className="flex items-center gap-2 mb-4">
-                <User className="w-5 h-5 text-primary" />
+                <User className="w-5 h-5 text-primary animate-float" />
                 <h3 className="text-xl font-semibold text-primary">Basic Information</h3>
               </div>
               <div className="space-y-3">
@@ -76,9 +76,9 @@ export const CharacterModal = ({ character, isOpen, onClose }: CharacterModalPro
             </div>
 
             {/* Homeworld Information */}
-            <div>
+            <div className="animate-slide-up animation-delay-400">
               <div className="flex items-center gap-2 mb-4">
-                <Home className="w-5 h-5 text-primary" />
+                <Home className="w-5 h-5 text-primary animate-float animation-delay-200" />
                 <h3 className="text-xl font-semibold text-primary">Homeworld</h3>
               </div>
               {loading ? (

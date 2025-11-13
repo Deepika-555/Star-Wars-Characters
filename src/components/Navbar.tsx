@@ -46,18 +46,18 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 bg-[rgba(5,10,20,0.75)] backdrop-blur-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 bg-[rgba(5,10,20,0.75)] backdrop-blur-xl animate-slide-down">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#hero" className="group flex items-center gap-3 rounded-full border border-transparent px-3 py-2 transition hover:border-primary/40 hover:bg-primary/5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_30px_rgba(247,223,80,0.35)] transition group-hover:-translate-y-0.5">
-              <Rocket className="h-5 w-5" />
+          <a href="#hero" className="group flex items-center gap-3 rounded-full border border-transparent px-3 py-2 transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_30px_rgba(247,223,80,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-[0_15px_40px_rgba(247,223,80,0.5)] group-hover:rotate-12 animate-glow-pulse">
+              <Rocket className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
             </span>
-            <span className="text-base font-bold tracking-[0.3em] text-primary">
+            <span className="text-base font-bold tracking-[0.3em] text-primary transition-all duration-300 group-hover:tracking-[0.4em]">
               STAR WARS HUB
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-8 md:flex animate-fade-in">
             {renderLinks()}
           </nav>
 
@@ -65,9 +65,9 @@ export const Navbar = () => {
             <Button
               size="sm"
               onClick={() => setIsLoginOpen(true)}
-              className="hidden min-w-[110px] items-center gap-2 bg-primary text-primary-foreground shadow-[0_8px_30px_rgba(247,223,80,0.35)] transition hover:-translate-y-0.5 hover:bg-primary/90 md:inline-flex"
+              className="group hidden min-w-[110px] items-center gap-2 bg-primary text-primary-foreground shadow-[0_8px_30px_rgba(247,223,80,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_12px_40px_rgba(247,223,80,0.5)] hover:scale-105 active:scale-95 md:inline-flex animate-fade-in-right"
             >
-              <LogIn className="h-4 w-4" />
+              <LogIn className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               Login
             </Button>
 
